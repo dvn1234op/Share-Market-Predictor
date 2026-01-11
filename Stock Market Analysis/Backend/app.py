@@ -10,7 +10,7 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-# Load the trained Keras model
+# Load the trained Keras model,this is the core
 model_path = os.path.join(os.path.dirname(__file__), 'Latest_stock_price_model.keras')
 try:
     model = keras.models.load_model(model_path)
@@ -62,6 +62,9 @@ def search_stocks():
         print("Error in search proxy:", e)
         return jsonify({"quotes": []}), 500
 
+
+
+#this is new line
 
 # 📈 Stock price prediction endpoint
 @app.route('/predict', methods=['POST'])
